@@ -1,0 +1,23 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+pre-commit = "*"
+yapf = "*"
+pipenv-to-requirements = "*"
+
+[packages]
+django = "==2.2.10"
+djangorestframework = "*"
+markdown = "*"
+django-filter = "*"
+django-redis = "*"
+pipenv = "*"
+redis = "*"
+ipython = "*"
+pylint = "*"
+
+[requires]
+python_version = "3.6"
