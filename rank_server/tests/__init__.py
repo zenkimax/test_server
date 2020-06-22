@@ -21,9 +21,6 @@ class TestCase(django_TestCase):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.anonymous = APIClient()
-        user = args
-        self.user = user
 
     @staticmethod
     def gen_client(username):
@@ -31,14 +28,8 @@ class TestCase(django_TestCase):
         gen client by token
         '''
         client = APIClient()
-        client.credentials(HTTP_AUTHORIZATION='Token' + username)
+        client.head = {'user': username}
         return client
-
-    def login(self, username):
-        '''
-        gen test client as logined user
-        '''
-        return self.gen_client(username)
 
     def login_as(self, username):
         '''
@@ -51,7 +42,6 @@ class TestCase(django_TestCase):
         pre-work
         '''
         self.init()
-        self.client = self.login_as(self.user)
 
     def tearDown(self):
         pass

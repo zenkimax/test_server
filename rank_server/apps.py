@@ -8,4 +8,4 @@ class RankConfig(AppConfig):
     '''
     rank config
     '''
-    name = 'rank'
+    name = 'rank_server'

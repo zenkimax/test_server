@@ -20,5 +20,5 @@ from django.http import HttpResponse
 urlpatterns = [
     url(r'^superadmin/', admin.site.urls),
     url(r'^ping/$', lambda _: HttpResponse('pong'), name='ping'),
-    url(r'^rank/', include(('rank.urls', 'rank'), namespace='rank')),
+    url(r'^rank/', include(('rank_server.urls', 'rank_server'), namespace='rank_server')),
 ]

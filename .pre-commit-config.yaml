@@ -1,10 +1,6 @@
 exclude: >
     (?x)^(
         .*_pb2(_grpc)?\.py|     # Generated protobuf and grpc files.
-        third_party/.*|         # Third party source codes.
-        common/.*|              # previous code
-        .*/migrations/.*|          # auto-generated code from third party project
-        settings.py|
     )$
 repos:
   - repo: local

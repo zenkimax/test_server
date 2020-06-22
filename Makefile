@@ -7,7 +7,7 @@ VERSION ?= 1.0.`date +%Y%m%d`
 BASE_COMMIT_ID ?= ""
 
 test:
-	python manage.py migrate && python manage.py test rank.tests --settings=settings_test
+	python manage.py migrate && python manage.py test rank_server.tests --settings=settings
 
 requirements:
 	pipenv run pipenv_to_requirements -f
