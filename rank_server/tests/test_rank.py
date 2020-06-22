@@ -47,8 +47,9 @@ class RankTestCase(TestCase):
         self.assertEqual(res_9.status_code, 200)
         self.assertEqual(res_10.status_code, 200)
 
-        res_rank_list = client_5.get(reverse('rank_server:list'), data={'user': 5, 'offset': 0})
+        res_rank_list = client_5.get(reverse('rank_server:list'), data={'user': 5, 'start': 0, 'end': 10})
         expect = [[1, "客户端1", 9999999], [2, "客户端2", 9500112], [3, "客户端3", 9233333], [4, "客户端4", 5445444],
                   [5, "客户端5", 3453452], [6, "客户端6", 2342342], [7, "客户端8", 66666], [8, "客户端7", 66666], [9, "客户端9", 76],
-                  [10, "客户端10", 75], [5, "客户端5", 3453452.0]]
+                  [10, "客户端10", 75], [5, "客户端5", 3453452]]
+        print(res_rank_list.json())
         self.assertEqual(res_rank_list.json(), expect)
