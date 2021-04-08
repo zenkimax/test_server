@@ -9,7 +9,7 @@ yapf = "*"
 pipenv-to-requirements = "*"
 
 [packages]
-django = "==2.2.13"
+django = "==2.2.20"
 djangorestframework = "*"
 markdown = "*"
 django-filter = "*"
